@@ -54,28 +54,28 @@ var level00 = function () {
     scene.onBeforeRenderObservable.add(()=>{
         
         if(inputMap["ArrowUp"]){
-            box.rotate(BABYLON.Axis.X, 0.05, BABYLON.Space.WORLD);
+            box.rotate(BABYLON.Axis.X, 0.02, BABYLON.Space.WORLD);
             if (player.position.y < topSide){
-                player.position.y+=0.05
+                player.position.y+=0.02
             }
         } 
 
         if(inputMap["ArrowLeft"]){
-            box.rotate(BABYLON.Axis.Y, 0.05, BABYLON.Space.WORLD);
+            box.rotate(BABYLON.Axis.Y, 0.02, BABYLON.Space.WORLD);
             if (player.position.x > leftSide){
-                player.position.x-=0.05
+                player.position.x-=0.02
             }
         } 
         if(inputMap["ArrowDown"]){
-            box.rotate(BABYLON.Axis.X, -0.05, BABYLON.Space.WORLD);
+            box.rotate(BABYLON.Axis.X, -0.02, BABYLON.Space.WORLD);
             if (player.position.y > bottomSide){
-                player.position.y-=0.05
+                player.position.y-=0.02
             }
         } 
         if(inputMap["ArrowRight"]){
-            box.rotate(BABYLON.Axis.Y, -0.05, BABYLON.Space.WORLD);
+            box.rotate(BABYLON.Axis.Y, -0.02, BABYLON.Space.WORLD);
             if (player.position.x < rightSide){
-                player.position.x+=0.05
+                player.position.x+=0.02
             }
         }
         if(inputMap["Enter"]) {

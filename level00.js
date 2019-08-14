@@ -81,6 +81,8 @@ var level00 = function () {
         if(inputMap["Enter"]) {
             if ( (player.position.x > -1.0 && player.position.x < 1.0) && (player.position.y > -1.0 && player.position.y < 1.0) ){
                 console.log("Pressing Enter Key")
+                //return false
+                //last
             }
         }    
         //console.log(engine.getFps())

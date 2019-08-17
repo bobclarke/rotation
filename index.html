@@ -6,108 +6,35 @@
         <title>ROTATION</title>
 
         <style>
-            html, body {
+            html, body, canvas {
                 overflow: hidden;
                 width: 100%;
                 height: 100%;
                 margin: 0;
                 padding: 0;
             }
-
-            #renderCanvas {
-                width: 100%;
-                height: 100%;
-                touch-action: none;
-            }
         </style>
 
         <script src="https://preview.babylonjs.com/babylon.js"></script>
+        <!--
         <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
         <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
-
-
-                
-
+        -->
     </head>
 
     <body>
-        <canvas id = "renderCanvas"></canvas>
-        <script type = "text/javascript">
-           var canvas = document.getElementById("renderCanvas");
-           var engine = new BABYLON.Engine(canvas, true);
-           
-           var createScene  = function() {
-              var scene = new BABYLON.Scene(engine);
-              scene.clearColor = new BABYLON.Color3(1, 1, 1);
-              
-              //Adding a light
-              var light = new BABYLON.HemisphericLight("Hemi", new BABYLON.Vector3(0, 1, 0), scene);
-  
-              //Adding an Arc Rotate Camera
-              var camera = new BABYLON.ArcRotateCamera("Camera", -1.85, 1.2, 200, BABYLON.Vector3.Zero(), scene);
-  
-              camera.attachControl(canvas, true);
-  
-              // The first parameter can be used to specify which mesh to import. Here we import all meshes
-              /*
-              BABYLON.SceneLoader.ImportMesh("", "scenes/", "buggy2.1.babylon", scene, function (newMeshes) {
-                 var buggy2 = newMeshes[0];
-                 camera.target = buggy2;
-  
-                 var decalMaterial = new BABYLON.StandardMaterial("decalMat", scene);
-                 var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 300, height:15}, scene);
-                 ground.material = decalMaterial;	
-              });
-              */	
-
-            
-              BABYLON.SceneLoader.ImportMesh("", "https://raw.githubusercontent.com/BabylonJS/MeshesLibrary/master/", "PBR_Spheres.glb", scene);
-              //BABYLON.SceneLoader.Load("", "buggy2.1.babylon", engine, function (scene) {
-
-                console.log(scene.meshes[0])
-
-              //});	
-
-
-
-
-              
-              return scene;
-
-           };
-
-
-           var scene = createScene();
-           
-           engine.runRenderLoop(function() {
-              scene.render();
-           });
-
-        </script>
-     </body>
-
-
-
-
-<!--
-    <body>
-        <canvas id="renderCanvas" touch-action="none"></canvas> //touch-action="none" for best results from PEP
+        
+        <p>Hello World</p>
+        <canvas id="renderCanvas"></canvas>
 
         <script>
-            var canvas = document.getElementById("renderCanvas"); // Get the canvas element 
-            var engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
-            var test = blenderTest();
+            var canvas = document.getElementById("renderCanvas");
+            var engine = BABYLON.Engine(canvas, true);
 
-            engine.runRenderLoop( function () { 
-                    test.render()
-            });
 
-            window.addEventListener("resize", function () { 
-                    engine.resize();
-            });
+        
         </script>
-
-   </body>
--->
+ 
+    </body>
 
 </html>

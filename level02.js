@@ -1,4 +1,6 @@
-var level00 = function () {
+//var level00 = function () {
+function level02 () {
+
     var scene = new BABYLON.Scene(engine);
 
     scene.clearColor = new BABYLON.Color3(0, 0, 0);
@@ -89,5 +91,9 @@ var level00 = function () {
     
     })
 
-    return scene;
+    scene.executeWhenReady( function() {
+        engine.runRenderLoop( function() {
+            scene.render();
+        });
+    });
 }

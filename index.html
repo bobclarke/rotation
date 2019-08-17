@@ -16,23 +16,59 @@
         </style>
 
         <script src="https://preview.babylonjs.com/babylon.js"></script>
-        <!--
         <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
         <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
-        -->
+        <script src="level01.js"></script>
+        <script src="level02.js"></script>
     </head>
 
     <body>
-        
-        <p>Hello World</p>
         <canvas id="renderCanvas"></canvas>
 
         <script>
             var canvas = document.getElementById("renderCanvas");
-            var engine = BABYLON.Engine(canvas, true);
+            var engine = new BABYLON.Engine(canvas, true);
+
+            function run_level00() {
+                var promise = new Promise( function(resolve,reject){
+                    setTimeout( function () {
+                        resolve(alert("Level 00"));
+                    }, 2000);
+                })
+                return promise;
+            }
+
+            function run_level01() {
+                alert("Level 01");
+            }
+
+            function run_level02() {
+                alert("Level 02");
+            }
+
+            function run_level03() {
+                alert("Level 03");
+            }
 
 
-        
+
+
+
+            
+            run_level00()
+                .then( function() {
+                    run_level01();
+                })
+                .then( function() {
+                    run_level02();
+                })
+                .then( function() {
+                    run_level03();
+                });
+
+
+
+
         </script>
  
     </body>

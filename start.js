@@ -1,4 +1,5 @@
-var level00 = function () {
+var start
+ = function () {
     var scene = new BABYLON.Scene(engine);
 
     scene.clearColor = new BABYLON.Color3(0, 0, 0);

@@ -24,8 +24,7 @@
         <script src="https://preview.babylonjs.com/babylon.js"></script>
         <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
         <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
-        <script src="level00.js"></script>
-        <script src="level01.js"></script>
+        <script src="start.js"></script>
 
     </head>
 
@@ -37,16 +36,13 @@
             var engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
 
             /******* Level 0 ******/    
-            var level00Scene = level00();
+            var startScene = start();
             //var level01Scene = level01();
 
 
             // Register a render loop to repeatedly render the scene
             engine.runRenderLoop(function () { 
-                    level00Scene.render()
-                    //level01Scene.render()
-                    //level02Scene.render()
-                    
+                    startScene.render()
             });
 
             //Watch for browser/canvas resize events

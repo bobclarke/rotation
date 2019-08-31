@@ -1,10 +1,5 @@
-
-var start = function () {
-
+var menu = function () {
     var scene = new BABYLON.Scene(engine);
-    window.level_start_complete = false;
-
-    console.log("in start function")
 
     scene.clearColor = new BABYLON.Color3(0, 0, 0);
     
@@ -27,8 +22,7 @@ var start = function () {
 
 
     var box = BABYLON.MeshBuilder.CreateBox("box",options, scene);
-    box.rotation.x = -0.3;
-    box.rotation.y = -0.4;
+    
 
     var spriteManagerPlayer = new BABYLON.SpriteManager("playerManager","Assets/1.png", 2, {width: 1, height: 1}, scene);
     var player = new BABYLON.Sprite("player", spriteManagerPlayer);
@@ -57,7 +51,7 @@ var start = function () {
     var topSide = 3.0
     var bottomSide = -3.0
 
-    scene.onBeforeRenderObservable.add( function () {
+    var observable = scene.onBeforeRenderObservable.add( function () {
         
         if(inputMap["ArrowUp"]){
             box.rotate(BABYLON.Axis.X, 0.02, BABYLON.Space.WORLD);
@@ -87,7 +81,7 @@ var start = function () {
         if(inputMap["Enter"]) {
             if ( (player.position.x > -1.0 && player.position.x < 1.0) && (player.position.y > -1.0 && player.position.y < 1.0) ){
                 console.log("Pressing Enter Key")
-                level_start_complete = true;
+                //scene.onBeforeRenderObservable.remove(observable);
             }
         }        
     })
